@@ -33,10 +33,10 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/logo.png">
 
-  <!-- Google Font: Montserrat (400, 500, 600, 700, 800) -->
+  <!-- Google Fonts: Playfair Display (Serif Elegan) & Montserrat (Sans-Serif) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="style.css">
@@ -167,15 +167,21 @@
           <!-- Indikator Ringkas Kepercayaan Investor -->
           <div class="hero-highlights">
             <div class="highlight-item">
-              <span class="highlight-icon">✓</span>
+              <span class="highlight-icon" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
               <span>Sistem Turnkey Siap Jalan</span>
             </div>
             <div class="highlight-item">
-              <span class="highlight-icon">✓</span>
+              <span class="highlight-icon" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
               <span>Laporan Transparan Harian</span>
             </div>
             <div class="highlight-item">
-              <span class="highlight-icon">✓</span>
+              <span class="highlight-icon" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </span>
               <span>100% Aset Milik Investor</span>
             </div>
           </div>
@@ -183,6 +189,10 @@
 
         <!-- Hero Slider (Kanan) -->
         <div class="hero-image-wrapper">
+          <!-- Elemen Dekoratif Halus di Belakang Foto -->
+          <div class="hero-decorative-shape" aria-hidden="true"></div>
+          <div class="hero-decorative-dots" aria-hidden="true"></div>
+
           <div class="hero-image-card hero-slider" id="heroSlider" aria-roledescription="carousel" aria-label="Cover Ruko Warteg Berlian Bahari">
             <div class="hero-slides-track">
               <!-- Slide 1: Tampil Pertama -->
@@ -214,6 +224,59 @@
           </div>
         </div>
 
+      </div>
+
+      <!-- Strip 3 Poin Keunggulan Utama di Bawah Hero Sesuai Instruksi -->
+      <div class="container hero-strip-container">
+        <div class="hero-feature-strip">
+          <div class="strip-item">
+            <span class="strip-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+                <line x1="6" y1="1" x2="6" y2="4"></line>
+                <line x1="10" y1="1" x2="10" y2="4"></line>
+                <line x1="14" y1="1" x2="14" y2="4"></line>
+              </svg>
+            </span>
+            <div class="strip-content">
+              <h4 class="strip-title">Resep rumahan</h4>
+              <p class="strip-desc">Kebutuhan harian rakyat dengan cita rasa autentik nusantara</p>
+            </div>
+          </div>
+
+          <div class="strip-divider" aria-hidden="true"></div>
+
+          <div class="strip-item">
+            <span class="strip-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <path d="M9 12l2 2 4-4"></path>
+              </svg>
+            </span>
+            <div class="strip-content">
+              <h4 class="strip-title">Manajemen profesional</h4>
+              <p class="strip-desc">Sistem turnkey & standarisasi mutu bahan terpusat</p>
+            </div>
+          </div>
+
+          <div class="strip-divider" aria-hidden="true"></div>
+
+          <div class="strip-item">
+            <span class="strip-icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+              </svg>
+            </span>
+            <div class="strip-content">
+              <h4 class="strip-title">Laporan harian transparan</h4>
+              <p class="strip-desc">Pencatatan omzet harian tertulis & akuntabel</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -749,9 +812,24 @@
               </p>
               
               <ul class="outlet-specs">
-                <li><span class="spec-check">✓</span> Ukuran bangunan ideal & efisien</li>
-                <li><span class="spec-check">✓</span> Target area padat penduduk & residensial</li>
-                <li><span class="spec-check">✓</span> Turnkey siap operasi langsung</li>
+                <li>
+                  <span class="spec-check" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </span>
+                  Ukuran bangunan ideal & efisien
+                </li>
+                <li>
+                  <span class="spec-check" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </span>
+                  Target area padat penduduk & residensial
+                </li>
+                <li>
+                  <span class="spec-check" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </span>
+                  Turnkey siap operasi langsung
+                </li>
               </ul>
 
               <div class="outlet-price-box">
@@ -765,9 +843,8 @@
             </div>
           </div>
 
-          <!-- Tipe Besar (Large) - Featured -->
-          <div class="outlet-card featured-outlet">
-            <div class="popular-ribbon">Paling Banyak Dipilih</div>
+          <!-- Tipe Besar (Large) -->
+          <div class="outlet-card">
             <div class="outlet-card-img">
               <img src="assets/outlet-large.jpg" alt="Outlet Warteg Berlian Bahari Tipe Besar Large" loading="lazy">
               <span class="outlet-badge">Kapasitas Maksimal</span>
@@ -779,9 +856,24 @@
               </p>
 
               <ul class="outlet-specs">
-                <li><span class="spec-check">✓</span> Kapasitas meja makan lebih banyak</li>
-                <li><span class="spec-check">✓</span> Menampung volume trafik jam sibuk</li>
-                <li><span class="spec-check">✓</span> Turnkey komersial lengkap</li>
+                <li>
+                  <span class="spec-check" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </span>
+                  Kapasitas meja makan lebih banyak
+                </li>
+                <li>
+                  <span class="spec-check" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </span>
+                  Menampung volume trafik jam sibuk
+                </li>
+                <li>
+                  <span class="spec-check" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </span>
+                  Turnkey komersial lengkap
+                </li>
               </ul>
 
               <div class="outlet-price-box">
@@ -795,8 +887,9 @@
             </div>
           </div>
 
-          <!-- Tipe Exclusive (Ber-AC) -->
-          <div class="outlet-card">
+          <!-- Tipe Exclusive (Ber-AC) - Premium Highlight Sesuai Instruksi -->
+          <div class="outlet-card featured-outlet exclusive-outlet">
+            <div class="popular-ribbon premium-ribbon">Premium</div>
             <div class="outlet-card-img">
               <img src="assets/outlet-exclusive.jpg" alt="Outlet Warteg Berlian Bahari Tipe Exclusive Ber-AC" loading="lazy">
               <span class="outlet-badge">Segmen Urban Modern</span>
@@ -808,9 +901,24 @@
               </p>
 
               <ul class="outlet-specs">
-                <li><span class="spec-check">✓</span> Ruangan ber-AC sejuk & nyaman</li>
-                <li><span class="spec-check">✓</span> Interior modern ramah keluarga & pekerja</li>
-                <li><span class="spec-check">✓</span> Fasilitas lengkap standar premium</li>
+                <li>
+                  <span class="spec-check" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </span>
+                  Ruangan ber-AC sejuk & nyaman
+                </li>
+                <li>
+                  <span class="spec-check" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </span>
+                  Interior modern ramah keluarga & pekerja
+                </li>
+                <li>
+                  <span class="spec-check" aria-hidden="true">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  </span>
+                  Fasilitas lengkap standar premium
+                </li>
               </ul>
 
               <div class="outlet-price-box">
@@ -818,7 +926,7 @@
                 <span class="price-val placeholder-text">[ISI NANTI]</span>
               </div>
 
-              <a href="https://wa.me/6287756091087?text=Halo%20Warteg%20Berlian%20Bahari%2C%20saya%20tertarik%20dengan%20Tipe%20Exclusive%20(Ber-AC).%20Bisa%20kirimkan%20proposal%20detailnya%3F" target="_blank" rel="noopener noreferrer" class="btn btn-outline-amber btn-block">
+              <a href="https://wa.me/6287756091087?text=Halo%20Warteg%20Berlian%20Bahari%2C%20saya%20tertarik%20dengan%20Tipe%20Exclusive%20(Ber-AC).%20Bisa%20kirimkan%20proposal%20detailnya%3F" target="_blank" rel="noopener noreferrer" class="btn btn-amber btn-block">
                 Tanya Rincian Tipe Exclusive
               </a>
             </div>
@@ -1563,15 +1671,29 @@
         <h4 class="footer-heading">Kontak Resmi</h4>
         <ul class="footer-contact-list">
           <li>
-            <span class="contact-icon">📱</span>
+            <span class="contact-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </span>
             <span>WhatsApp: <a href="https://wa.me/6287756091087" target="_blank" rel="noopener noreferrer">0877-5609-1087</a></span>
           </li>
           <li>
-            <span class="contact-icon">📍</span>
+            <span class="contact-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </span>
             <span>Alamat Kantor: <span class="placeholder-text">[ISI NANTI]</span></span>
           </li>
           <li>
-            <span class="contact-icon">🕒</span>
+            <span class="contact-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </span>
             <span>Jam Operasional: Senin – Jumat | 08.00 - 17.00 WIB</span>
           </li>
         </ul>

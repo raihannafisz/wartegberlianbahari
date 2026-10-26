@@ -152,14 +152,24 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  // --- 5. ACTIVE NAVIGATION SPY PADA SCROLL ---
+  // --- 5. ACTIVE NAVIGATION SPY & HEADER SHADOW PADA SCROLL ---
   const sections = document.querySelectorAll('section[id]');
   const siteHeader = document.querySelector('.site-header');
 
-  function updateActiveNavLink() {
-    const scrollY = window.pageYOffset;
+  function handleScroll() {
+    const scrollY = window.pageYOffset || document.documentElement.scrollTop;
     const headerHeight = siteHeader ? siteHeader.offsetHeight : 70;
 
+    // Header shadow on scroll
+    if (siteHeader) {
+      if (scrollY > 20) {
+        siteHeader.classList.add('scrolled');
+      } else {
+        siteHeader.classList.remove('scrolled');
+      }
+    }
+
+    // Active link spy
     sections.forEach(section => {
       const sectionHeight = section.offsetHeight;
       const sectionTop = section.offsetTop - headerHeight - 50;
@@ -176,7 +186,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  window.addEventListener('scroll', updateActiveNavLink, { passive: true });
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll(); // Trigger initial check
 
 
   // --- 6. HERO COVER SLIDER (FADE, 5s, DOTS, PAUSE, SWIPE) ---
@@ -482,45 +493,58 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  // --- 8. ANIMASI FADE-IN SAAT SCROLL (RINGAN & HALUS) ---
-  // Menambahkan class animasi secara progresif pada elemen kartu & seksi
+  // --- 8. ANIMASI FADE-IN SAAT SCROLL (RINGAN, STAGGER, PREFERS-REDUCED-MOTION) ---
+  const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   const animatableElements = document.querySelectorAll(
-    '.about-card, .feature-card, .outlet-card, .facility-card, .transparency-mini-card, .timeline-step, .gallery-item, .doc-gallery-item'
+    '.hero-feature-strip, .about-card, .feature-card, .menu-gallery-wrapper, .doc-gallery-item, .outlet-card, .facility-card, .transparency-card, .transparency-mini-card, .timeline-step, .faq-item, .contact-card, .form-card, .final-cta-card'
   );
 
-  // Set style transisi awal
-  animatableElements.forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
-  });
-
-  if ('IntersectionObserver' in window) {
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px 0px -40px 0px',
-      threshold: 0.1
-    };
-
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-
-    animatableElements.forEach(el => {
-      revealObserver.observe(el);
-    });
-  } else {
-    // Fallback jika browser lawas tidak mendukung IntersectionObserver
+  if (prefersReducedMotion) {
+    // Jika pengguna meminta reduced motion, langsung tampilkan tanpa animasi
     animatableElements.forEach(el => {
       el.style.opacity = '1';
       el.style.transform = 'none';
     });
+  } else {
+    // Hitung stagger delay berdasarkan indeks elemen seinduk
+    animatableElements.forEach((el) => {
+      const parent = el.parentElement;
+      const siblings = parent ? Array.from(parent.children).filter(c => c.matches && (c.matches('.about-card, .feature-card, .outlet-card, .facility-card, .transparency-mini-card, .doc-gallery-item, .timeline-step, .faq-item'))) : [];
+      const siblingIndex = siblings.indexOf(el);
+      const delay = siblingIndex > 0 ? (siblingIndex % 4) * 0.08 : 0;
+
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = `opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1) ${delay}s, transform 0.65s cubic-bezier(0.16, 1, 0.3, 1) ${delay}s`;
+    });
+
+    if ('IntersectionObserver' in window) {
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -30px 0px',
+        threshold: 0.1
+      };
+
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      animatableElements.forEach(el => {
+        revealObserver.observe(el);
+      });
+    } else {
+      animatableElements.forEach(el => {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+      });
+    }
   }
 
 });
