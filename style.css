@@ -92,6 +92,7 @@ html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 body {
@@ -196,7 +197,7 @@ h4 {
   margin-left: 0;
 }
 
-/* Placeholder [ISI NANTI] Styling */
+/* Badge & Tag Styling */
 .placeholder-text {
   display: inline-block;
   background-color: var(--accent-light);
@@ -413,13 +414,19 @@ h4 {
   text-decoration: none;
 }
 
+.brand-logo-picture {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
 .brand-logo {
-  width: 44px;
-  height: 44px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--accent);
-  box-shadow: var(--shadow-xs);
+  display: block;
 }
 
 .brand-name {
@@ -1426,6 +1433,14 @@ h4 {
   flex-grow: 1;
 }
 
+/* Penataan Lencana PREMIUM di pojok kartu tanpa merusak padding seragam */
+.outlet-card .popular-ribbon {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 5;
+}
+
 .outlet-name {
   font-size: 1.25rem;
   font-weight: 700;
@@ -1914,6 +1929,35 @@ h4 {
   line-height: 1.75;
 }
 
+.faq-answer-inner ul {
+  margin: 12px 0;
+  padding-left: 20px;
+}
+
+.faq-answer-inner ul li {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.75;
+  list-style: disc;
+  margin-bottom: 4px;
+}
+
+.faq-highlight-box {
+  background-color: var(--accent-light);
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius-sm);
+  padding: 16px 20px;
+  margin-top: 14px;
+  font-size: 0.95rem;
+  color: var(--ink);
+  font-weight: 600;
+  line-height: 1.65;
+}
+
+.faq-wa-btn {
+  display: inline-flex;
+}
+
 /* --- 16. SEKSI 8: KONTAK & FORMULIR CALON MITRA --- */
 .contact-grid {
   display: grid;
@@ -2157,9 +2201,20 @@ textarea.form-control {
   margin-bottom: 18px;
 }
 
+.footer-logo-picture {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
 .footer-logo {
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
-  border: 2px solid var(--accent);
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.9);
 }
 
 .footer-brand-title h3 {
@@ -2393,7 +2448,7 @@ textarea.form-control {
   .nav-menu {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: 0;
     width: 290px;
     height: 100vh;
     background-color: #FFFFFF;
@@ -2401,12 +2456,21 @@ textarea.form-control {
     align-items: flex-start;
     padding: 80px 28px 36px;
     box-shadow: -6px 0 24px rgba(0, 0, 0, 0.15);
-    transition: right var(--transition-normal);
+    transform: translateX(100%);
+    transition: transform var(--transition-normal), display var(--transition-normal) allow-discrete;
     z-index: 1001;
+    display: none;
   }
 
   .nav-menu.open {
-    right: 0;
+    display: flex;
+    transform: translateX(0);
+  }
+
+  @starting-style {
+    .nav-menu.open {
+      transform: translateX(100%);
+    }
   }
 
   .nav-list {
@@ -2525,6 +2589,19 @@ textarea.form-control {
 
 /* Smartphone (< 640px) */
 @media (max-width: 640px) {
+  .brand-logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .btn {
+    white-space: normal;
+    max-width: 100%;
+    text-align: center;
+    padding: 12px 20px;
+    line-height: 1.35;
+  }
+
   .section {
     padding-top: 56px;
     padding-bottom: 56px;
@@ -2680,8 +2757,8 @@ textarea.form-control {
   }
 
   .brand-logo {
-    width: 38px;
-    height: 38px;
+    width: 48px;
+    height: 48px;
   }
 
   .about-card,
